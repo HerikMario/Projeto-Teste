@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+   
+   db:
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_DB: teste_db
+      POSTGRES_PASSWORD: 1234
+      POSTGRES_USER: virtutis
+    ports:
+      - "5432:5432"  # Mapeia a porta do contêiner para o host
+    volumes:
+      - pg_data:/var/lib/postgresql/data  # Volume para persistir os dados  
+volumes:
+  pg_data:
+    driver: local  # Volume gerenciado localmente
