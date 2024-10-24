@@ -1,8 +1,5 @@
 package com.ProjetosDeTeste.App_Teste.domain;
-import jakarta.persistence.Embedded;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -16,14 +13,27 @@ import lombok.Setter;
 @Entity
 public class User {
     @Id
+    @Column(name = "ID_usuario")
     private Long id;
 
+    @Column(name = "nome")
     private String name;
+
+    @Column(name = "email")
     private String email;
+
+    @Column(name = "senha")
     private String password;
+
+    @Column(name = "cpf")
     private String cpf;
-    private String cnpj;
-    private double saldo;
+
+    //private String cnpj;
+
+    @Column(name = "saldo")
+    private double balance;
+
+    @Column(name = "telefone")
     private String telephoneNumber;
 
     @Embedded
