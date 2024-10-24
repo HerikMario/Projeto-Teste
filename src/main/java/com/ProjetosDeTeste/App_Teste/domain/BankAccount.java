@@ -1,9 +1,6 @@
 package com.ProjetosDeTeste.App_Teste.domain;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -28,4 +25,8 @@ public class BankAccount {
 
     @Column(name = "agencia")
     private String agency;
+
+    @ManyToOne
+    @JoinColumn(name = "id_usuario")
+    private User user;
 }
