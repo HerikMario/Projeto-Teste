@@ -14,6 +14,7 @@ import lombok.Setter;
 @Table(name = "contaBanco")
 public class BankAccount {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "ID_contaBanco")
     private Long id;
 
