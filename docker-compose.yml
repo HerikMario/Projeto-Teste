@@ -3,7 +3,7 @@ version: '3.8'
 services:
    
    db:
-    image: postgres
+    image: postgres:15.0
     restart: always
     environment:
       POSTGRES_DB: teste_db
@@ -12,7 +12,8 @@ services:
     ports:
       - "5432:5432"  # Mapeia a porta do contêiner para o host
     volumes:
-      - pg_data:/var/lib/postgresql/data  # Volume para persistir os dados  
+      - pg_data:/var/lib/postgresql/data  # Volume para persistir os dados
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql  # Monta o init.sql para execução
 volumes:
   pg_data:
     driver: local  # Volume gerenciado localmente
