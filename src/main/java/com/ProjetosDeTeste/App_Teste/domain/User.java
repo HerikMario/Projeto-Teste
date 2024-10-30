@@ -1,4 +1,6 @@
 package com.ProjetosDeTeste.App_Teste.domain;
+
+// import java.time.LocalDate;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -36,6 +38,9 @@ public class User {
 
     @Column(name = "telefone")
     private String telephoneNumber;
+
+    // @Column(name= "data_Nascimento")
+    // private LocalDate birthDate;
 
     @Embedded
     private Address address;
