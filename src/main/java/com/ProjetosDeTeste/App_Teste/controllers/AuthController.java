@@ -27,7 +27,7 @@ public class AuthController {
     @PostMapping("/login")
     public ResponseEntity<ResponseDTO> login(@RequestBody LoginRequestDTO body){
         User user = this.userRepository.findByCpf(body.cpf()).orElseThrow(() -> new RuntimeException("User not found"));
-        if(passwordEncoder.matches(user.getPassword(), body.password())){
+        if(passwordEncoder.matches(body.password(), user.getPassword())){
             String token = this.tokenService.generateToken(user);
             return ResponseEntity.ok(new ResponseDTO(user.getCpf(), token));
         }
