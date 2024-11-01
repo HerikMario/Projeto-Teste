@@ -7,6 +7,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.time.LocalDate;
+
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
@@ -39,8 +41,8 @@ public class User {
     @Column(name = "telefone")
     private String telephoneNumber;
 
-    // @Column(name= "data_Nascimento")
-    // private LocalDate birthDate;
+    @Column(name= "dataNascimento")
+    private LocalDate birthDate;
 
     @Embedded
     private Address address;
