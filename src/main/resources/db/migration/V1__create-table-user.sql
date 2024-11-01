@@ -12,7 +12,8 @@ CREATE TABLE usuario (
     endBairro VARCHAR(30),
     endCidade VARCHAR(30),
     endEstado VARCHAR(30),
-    endCep VARCHAR(10)
+    endCep VARCHAR(10),
+    dataNascimento DATE NOT NULL
 );
 
 -- Tabela de Contas Bancárias
