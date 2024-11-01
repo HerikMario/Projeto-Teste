@@ -7,13 +7,13 @@ CREATE TABLE usuario (
     telefone VARCHAR(30),
     saldo DECIMAL(10, 2) DEFAULT 0,
     senha VARCHAR(255) NOT NULL, -- varchar grande para armazenar hash da senha
-    endNumero VARCHAR(10),
-    endRua VARCHAR(100),
-    endBairro VARCHAR(30),
-    endCidade VARCHAR(30),
-    endEstado VARCHAR(30),
-    endCep VARCHAR(10),
-    dataNascimento DATE NOT NULL
+    end_numero VARCHAR(10),
+    end_rua VARCHAR(100),
+    end_bairro VARCHAR(30),
+    end_cidade VARCHAR(30),
+    end_estado VARCHAR(30),
+    end_cep VARCHAR(10),
+    data_nascimento DATE NOT NULL
 );
 
 -- Tabela de Contas Bancárias

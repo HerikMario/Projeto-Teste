@@ -2,6 +2,7 @@ package com.ProjetosDeTeste.App_Teste.domain;
 
 import java.time.LocalDate;
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -39,7 +40,8 @@ public class User {
     @Column(name = "telefone")
     private String telephoneNumber;
 
-    @Column(name= "dataNascimento")
+    @NotNull
+    @Column(name= "data_nascimento")
     private LocalDate birthDate;
 
     @Embedded

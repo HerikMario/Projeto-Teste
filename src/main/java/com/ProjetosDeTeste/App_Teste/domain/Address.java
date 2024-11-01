@@ -13,21 +13,21 @@ import lombok.Setter;
 @Getter
 @Embeddable
 public class Address {
-    @Column(name = "endRua")
+    @Column(name = "end_rua")
     private String street;
 
-    @Column(name = "endNumero")
-    private int number;
+    @Column(name = "end_numero")
+    private String number;
 
-    @Column(name = "endCep")
+    @Column(name = "end_cep")
     private String CEP;
 
-    @Column(name = "endBairro")
+    @Column(name = "end_bairro")
     private String district;
 
-    @Column(name = "endCidade")
+    @Column(name = "end_cidade")
     private String city;
 
-    @Column(name = "endEstado")
+    @Column(name = "end_estado")
     private String state;
 }
