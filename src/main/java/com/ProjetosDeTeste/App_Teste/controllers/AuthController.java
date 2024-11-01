@@ -13,7 +13,6 @@ import com.ProjetosDeTeste.App_Teste.dto.RegisterRequestDTO;
 import com.ProjetosDeTeste.App_Teste.dto.ResponseDTO;
 import com.ProjetosDeTeste.App_Teste.infra.security.TokenService;
 import com.ProjetosDeTeste.App_Teste.repositories.UserRepository;
-
 import lombok.RequiredArgsConstructor;
 
 @RestController
@@ -44,7 +43,7 @@ public class AuthController {
             newUser.setPassword(passwordEncoder.encode(body.password()));
             newUser.setTelephoneNumber(body.telephoneNumber());
             newUser.setCpf(body.cpf());
-            // newUser.setBirthDate(body.birthDate());
+            newUser.setBirthDate(body.birthDate());
             this.userRepository.save(newUser);
             String token = this.tokenService.generateToken(newUser);
             return ResponseEntity.ok(new ResponseDTO(newUser.getCpf(), token));
